@@ -1,12 +1,15 @@
 name: CI
 
 on:
-  pull_request:
-    branches: [ "main" ]
-    types: [ closed, opened, synchronize, reopened ]
-  issue_comment:
-    types: [created]
   workflow_dispatch:
+    inputs:
+      id:
+        description: 'run identifier'
+        required: false
+      job:
+        required: true
+      comment_id:
+        required: true
 
 jobs:
   digger-job:
