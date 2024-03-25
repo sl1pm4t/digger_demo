@@ -8,5 +8,5 @@ resource "null_resource" "resource3" {
 }
 
 output "xx" {
-   value = "zz"
+   value = null_resource.resource1.id
 }
