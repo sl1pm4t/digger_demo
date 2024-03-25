@@ -23,14 +23,13 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - name: digger run
-        uses: diggerhq/digger@latest
+      - uses: diggerhq/digger@latest
         with:
           setup-aws: false
-          # digger-token: ${{ secrets.DIGGER_TOKEN }}
+          disable-locking: true
+          digger-token: ${{ secrets.DIGGER_TOKEN }}
           digger-organisation: ${{ secrets.DIGGER_ORGANISATION }}
           digger-hostname: ${{ secrets.DIGGER_HOSTNAME }}
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # DIGGER_GITHUB_TOKEN: ${{ secrets.DIGGER_GITHUB_TOKEN }}
