@@ -1,9 +1,16 @@
-resource "null_resource" "test1" {
+resource "null_resource" "resource1" {
 }
 
-resource "null_resource" "test2" {
+resource "null_resource" "resource2" {
 }
 
-output "xx" {
-   value = "zz"
+resource "null_resource" "resource3" {
+}
+
+output "res1" {
+   value = null_resource.resource1.id
+}
+
+output "res2" {
+   value = null_resource.resource2.id
 }
